@@ -1,0 +1,108 @@
+* {box-sizing: border-box;}
+
+body{
+    background-image: url(../img/back.jpg);
+}
+
+/* h1{
+    color: white;
+}
+
+p{
+    color: white;
+} */
+
+/* .window{
+    
+    background-color: green;
+    width: 100vw;
+    height: 100vh;
+    
+} */
+
+.frame {
+    background-image: url(../img/frame.png);
+    background-size: 100% 100%;
+    background-color: blue;
+    width: 900px;
+    height: 600px;
+    margin: 50px auto;
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+}
+
+.textbox {
+    /* margin-top: 0px; */
+    padding-top: 1px;
+    background-color: aqua;
+}
+
+.textQuestion {
+    background-color: white;
+    width: 637px;
+    height: 155px;
+    margin: 50px auto;
+    /* padding-top: 5px; */
+}
+
+/* .textQuestion:hover{
+ background-color: red;
+} */
+
+.textAnser {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: red;
+    width: 614px;
+    height: 300px;
+    margin: 0px auto;
+    margin-top: 90px;
+    /* bottom: 0px; */
+    padding-top: -8px;
+}
+.anser1{
+    background-color: white;
+    margin: 20px;
+    width: 200px;
+    height: 80px;
+}
+
+
+
+.anser2{
+    background-color: white;
+    margin: 20px;
+    width: 200px;
+    height: 80px;
+}
+
+.anser3{
+    background-color: white;
+    margin: 20px;
+    width: 200px;
+    height: 80px;
+}
+
+.anser4{
+    background-color: white;
+    margin: 20px;
+    width: 200px;
+    height: 80px;
+}
+
+.anser2:hover{
+background-color: yellow;
+}
+.anser1:hover{
+    background-color: yellow;
+}
+.anser3:hover{
+    background-color: yellow;
+}
+.anser4:hover{
+    background-color: yellow;
+}
