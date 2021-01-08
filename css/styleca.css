@@ -1,0 +1,33 @@
+.docomo{
+    width: 200px;
+    height: 150px;
+    background-color: brown;
+}
+
+.au{
+    width: 200px;
+    height: 150px;
+    background-color: orangered;
+}
+
+.softbank{
+    width: 200px;
+    height: 150px;
+    background-color: white;
+}
+
+.uq{
+    width: 200px;
+    height: 150px;
+    background-color: pink;
+}
+
+.ymobile{
+    width: 200px;
+    height: 150px;
+    background-color: red;
+}
+
+/* .category{
+    width: ;
+} */
