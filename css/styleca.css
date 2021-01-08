@@ -2,32 +2,71 @@
     width: 200px;
     height: 150px;
     background-color: brown;
+    margin: 30px;
 }
 
 .au{
     width: 200px;
     height: 150px;
     background-color: orangered;
+    margin: 30px;
 }
 
 .softbank{
     width: 200px;
     height: 150px;
     background-color: white;
+    margin: 30px;
 }
 
 .uq{
     width: 200px;
     height: 150px;
     background-color: pink;
+    margin: 30px;
 }
 
 .ymobile{
     width: 200px;
     height: 150px;
     background-color: red;
+    margin: 30px;
 }
 
-/* .category{
-    width: ;
-} */
+.docomo:hover{
+    background-color: yellow;
+}
+
+.au:hover{
+    background-color: yellow;
+}
+
+.softbank:hover{
+    background-color: yellow;
+}
+
+.uq:hover{
+    background-color: yellow;
+}
+
+.ymobile:hover{
+    background-color: yellow;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 500px; */
+}
+
+
+.titleDisplay{
+    width: 900px;
+    height: 600px;
+    margin: 50px auto;
+}
+
+.titleText {
+    color: white;
+    text-align: center;
+}

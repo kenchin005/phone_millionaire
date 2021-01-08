@@ -10,10 +10,10 @@
 </head>
 <body>
 
-    <div  id="tit">
+    <div  id="tit" class="titleDisplay">
 
-        <div class="title" >
-            <h1>ケータイ＄ミリオネア</h1>
+        <div class="title">
+            <h1 class="titleText">ケータイ＄ミリオネア</h1>
         </div>
 
         <div class="category">
@@ -92,14 +92,14 @@ que.style.display ="none";
 
 
 var DQuestion = [
-    ["現在のdocomoショップ数は？","約1000","約2000","約3000","約4000","約2000"],
+    ["現在のdocomoショップ数はいくつ？","約1000","約2000","約3000","約4000","約2000"],
     ["docomoが新しく発表したブランド名は？","adamo","ahamo","asimo","asobo","ahamo"],
     ["docomoのキャラクターの種類はライオンですがその名前は？","ライマル","アニマル","ドニマル","ネコマル","ドニマル"]
 ];
 
 var AQuestion = [
-    ["auのマスコットキャラの三太郎は桃太郎・浦島太郎・あとひとつは？","金太郎","小太郎","Q太郎","一太郎","金太郎"],
-    ["auでかぐや姫を演じる俳優は？","菜々緒","浜辺美波","広瀬すず","有村架純","有村架純"],
+    ["auのマスコットキャラの三太郎は桃太郎・浦島太郎・あとひとつは何太郎？","金太郎","小太郎","Q太郎","一太郎","金太郎"],
+    ["auのCMでかぐや姫を演じている俳優は誰？","菜々緒","浜辺美波","広瀬すず","有村架純","有村架純"],
     ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"]
 ];
 
@@ -110,15 +110,15 @@ var SQuestion = [
 ];
 
 var UQuestion = [
-    ["UQモバイルのショップ数は？","約80","約180","約280","約380","約280"],
-    ["UQのキャラクター、ブルーガチャムクの出身地は？","ブループラネット","ブルーテラ","ブルースター","ブルーコスモ","ブループラネット"],
+    ["UQモバイルのショップ数はいくつ？","約80","約180","約280","約380","約280"],
+    ["UQのキャラクター、ブルーガチャムクの出身地はどこ？","ブループラネット","ブルーテラ","ブルースター","ブルーコスモ","ブループラネット"],
     ["UQのポケットWi-Fiのブランド名は？","UQWiMAX","UQMAXPOWER","UQHiMAX","UQMAX","UQWiMAX"]
 ];
 
 var YQuestion = [
-    ["Yモバイルのショップ数は？","約200","約600","約900","約1500","約900"],
+    ["Yモバイルのショップ数はいくつ？","約200","約600","約900","約1500","約900"],
     ["Yモバイルが新しく発表したプランの名前は？","スマホプラン","ベーシックプラン","Yプラン","シンプルプラン","シンプルプラン"],
-    ["Yモバイルのキャラぷてにゃんの猫種は？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"]
+    ["Yモバイルのキャラぷてにゃんの猫種は何？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"]
 ];
 
 
@@ -166,6 +166,9 @@ function Aset(){
     $A3.textContent= AQuestion[Qcnt][3];
     $A4.textContent= AQuestion[Qcnt][4];
 
+    que.style.display = "block"; 
+    tit.style.display ="none";
+
 }
 
 function Sset(){
@@ -177,6 +180,9 @@ function Sset(){
     $A2.textContent= SQuestion[Qcnt][2];
     $A3.textContent= SQuestion[Qcnt][3];
     $A4.textContent= SQuestion[Qcnt][4];
+
+    que.style.display = "block"; 
+    tit.style.display ="none";
 
 }
 
@@ -190,6 +196,9 @@ function Uset(){
     $A3.textContent= UQuestion[Qcnt][3];
     $A4.textContent= UQuestion[Qcnt][4];
 
+    que.style.display = "block"; 
+    tit.style.display ="none";
+
 }
 
 function Yset(){
@@ -202,6 +211,9 @@ function Yset(){
     $A3.textContent= YQuestion[Qcnt][3];
     $A4.textContent= YQuestion[Qcnt][4];
 
+    que.style.display = "block"; 
+    tit.style.display ="none";
+
 }
 
 
@@ -213,7 +225,7 @@ function Yset(){
 //正誤判定
 
 const clickHandler = (e) =>{
-    if(e.target.innerText === DQuestion[Qcnt][4]||e.target.innerText === AQuestion[Qcnt][4]||e.target.innerText === SQuestion[Qcnt][4]||e.target.innerText === UQuestion[Qcnt][4]||e.target.innerText === YQuestion[Qcnt][4]) {
+    if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
     alert("正解");
 
     
@@ -242,15 +254,15 @@ $A4.addEventListener('click',(e) =>{
 
 
 
-function Answer_Check(ans) {
-    if(ans === DQuestion[Qcnt][4]||ans === AQuestion[Qcnt][4]||ans === SQuestion[Qcnt][4]||ans === UQuestion[Qcnt][4]||ans === YQuestion[Qcnt][4]) {
-    alert("正解");
+// function Answer_Check(ans) {
+//     if(ans === DQuestion[Qcnt][5]||ans === AQuestion[Qcnt][5]||ans === SQuestion[Qcnt][5]||ans === UQuestion[Qcnt][5]||ans === YQuestion[Qcnt][5]) {
+//     alert("正解");
 
     
-    } else {
-    alert("不正解");
-    }
-}
+//     } else {
+//     alert("不正解");
+//     }
+
 
 
 
