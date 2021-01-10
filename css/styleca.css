@@ -70,3 +70,32 @@
     color: white;
     text-align: center;
 }
+
+.omedeto{
+    text-align: center;
+    font-size: 50px;
+    margin: 100px auto;
+    color: white;
+}
+
+.start h1{
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin: 100px auto;
+}
+
+.start{
+    text-align: center;
+}
+
+button{
+ font-size: 50px;
+}
+
+.zannen{
+    text-align: center;
+    font-size: 50px;
+    margin: 100px auto;
+    color: white;
+}

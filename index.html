@@ -10,10 +10,22 @@
 </head>
 <body>
 
+    <div class="start" id="sta">
+        <h1>クイズ
+        ケータイ＄ミリオネア</h1>
+
+     <button onclick="start()">
+         ゲームスタート
+     </button>
+
+    </div>
+
+
+
     <div  id="tit" class="titleDisplay">
 
         <div class="title">
-            <h1 class="titleText">ケータイ＄ミリオネア</h1>
+            <h1 class="titleText">キャリアを選んでね！！</h1>
         </div>
 
         <div class="category">
@@ -74,18 +86,87 @@
 
     </div>
 
+
+    <div class="omedeto" id="ome">
+        おめでとう画面（仮）
+
+    </div>
+
+    <div class="zannen" id="zan"　>
+        残念画面
+        アンケートに答えたら景品がもらえるよ！仮
+    </div>
+
+
+<!-- //////BGM////// -->
+
+<div class="bgm">
+    <audio id="titlebgm" preload="auto" src="bgm/title.mp3" type="audio/mp3"></audio>
+    <audio id="seikai" preload="auto" src="bgm/seikai.mp3" type="audio/mp3"></audio>
+    <audio id="monmon" preload="auto" src="bgm/usagi.mp3" type="audio/mp3"></audio>
+</div>
+
+
+
+
+
 <!-- </div> -->
 
 <script type="text/javascript" src="js/app.js"></script>
 <script>
 
+
+
+// const button = getElementsByTagName("button")
+const bgm = document.querySelector("#titlebgm"); 
+const sei = document.querySelector("#seikai");
+const mon = document.querySelector("#monmon");
+
+function monmon(){
+    mon.loop = true;
+    mon.play();
+}
+
+function seikai() {
+    sei.play();
+}
+
+function bgmPause() {
+    bgm.pause();
+}
+
+
+// button.addEventListener("click",()=>{
+//     bgm.play();
+// })
+
+var sta = document.getElementById("sta");
+
 var tit = document.getElementById("tit");
 
 var que = document.getElementById("que");
 
+var ome = document.getElementById("ome");
+
+var zan = document.getElementById("zan");
+
+
+tit.style.display ="none";
+
 que.style.display ="none";
 
+ome.style.display ="none";
 
+zan.style.display ="none";
+
+
+
+function start(){
+    sta.style.display ="none";
+    tit.style.display ="block";
+
+
+}
 
 
 
@@ -94,31 +175,59 @@ que.style.display ="none";
 var DQuestion = [
     ["現在のdocomoショップ数はいくつ？","約1000","約2000","約3000","約4000","約2000"],
     ["docomoが新しく発表したブランド名は？","adamo","ahamo","asimo","asobo","ahamo"],
-    ["docomoのキャラクターの種類はライオンですがその名前は？","ライマル","アニマル","ドニマル","ネコマル","ドニマル"]
+    ["docomoのキャラクターの種類はライオンですがその名前は？","ライマル","アニマル","ドニマル","ネコマル","ドニマル"],
+    ["この中でd払いができないお店はどれ？","ミスタードーナツ","モスバーガー","すき家","マクドナルド","マクドナルド"],
+    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","・シャープ","・京セラ","・富士通","・サムスン","・サムスン"],
+    ["現在一般的に普及しているスマホの代表的なOSといえば「Android」ともうひとつはなに？","・AOs","・sOS","・iOS","・COS","・iOS"],
+    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","・imstagram","・instagrom","・instagram","・inspagram","・instagram"],
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","・6インチ","・6.1インチ","・6.2インチ","・6.3インチ","・6.1インチ"]
+
 ];
 
 var AQuestion = [
     ["auのマスコットキャラの三太郎は桃太郎・浦島太郎・あとひとつは何太郎？","金太郎","小太郎","Q太郎","一太郎","金太郎"],
     ["auのCMでかぐや姫を演じている俳優は誰？","菜々緒","浜辺美波","広瀬すず","有村架純","有村架純"],
-    ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"]
+    ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"],
+    ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","２００３年","２００５年","２００７年","２０１０年","２００７年"],
+    ["スマホのGALAXYはサムスン製、PixelはGoogle製、iPhoneはApple製。ではXpariaは何製？","シャープ","京セラ","富士通","ソニー","ソニー"],
+    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"],
+    ["auのワイド学割は何才までOK？","18才","22才","29才","40才","29才"],
+
+
 ];
 
 var SQuestion = [
     ["ソフトバンクのお父さんは現在何代目？","初代","二代目","三代目","四代目","二代目"],
     ["GooglePixelを独占販売しているキャリアはどこ？","docomo","au","softbank","楽天","softbank"],
-    ["ソフトバンクのお父さんの犬種は？","柴犬","シーズー","北海道犬","パグ","北海道犬"]
+    ["ソフトバンクのお父さんの犬種は？","柴犬","シーズー","北海道犬","パグ","北海道犬"],
+    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","シャープ","京セラ","富士通","Google","Google"],
+    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
+    ["ソフトバンクで最近CMでも謳っている「5Gって〇〇〇〇〇？」〇に入る文字を答えよ","しんちゃん","攻殻機動隊","ドラえもん","テクノロジー","ドラえもん"],
+    ["ソフトバンクのCMでおなじみの家族は現在何人家族？","3人","4人","5人","6人","5人"],
+    ["ソフトバンク光のキャラクターはとあるポケモンですが、その名前はなに？","ピチュー","ピカチュウ","ライチュウ","チュウチュウ","ピカチュウ"],
+
 ];
 
 var UQuestion = [
     ["UQモバイルのショップ数はいくつ？","約80","約180","約280","約380","約280"],
     ["UQのキャラクター、ブルーガチャムクの出身地はどこ？","ブループラネット","ブルーテラ","ブルースター","ブルーコスモ","ブループラネット"],
-    ["UQのポケットWi-Fiのブランド名は？","UQWiMAX","UQMAXPOWER","UQHiMAX","UQMAX","UQWiMAX"]
+    ["UQのポケットWi-Fiのブランド名は？","UQWiMAX","UQMAXPOWER","UQHiMAX","UQMAX","UQWiMAX"],
+    ["現在人気のiPhoneSeシリーズ。現在出ている機種は何世代目？","第一世代","第二世代","第三世代","第四世代","第二世代"],
+    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","シャープ","京セラ","富士通","サムスン","サムスン"],
+    ["現在一般的に普及しているスマホの代表的なOSといえば「Android」ともうひとつはなに？","AOs","sOS","iOS","COS","iOS"],
+    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"]
 ];
 
 var YQuestion = [
     ["Yモバイルのショップ数はいくつ？","約200","約600","約900","約1500","約900"],
     ["Yモバイルが新しく発表したプランの名前は？","スマホプラン","ベーシックプラン","Yプラン","シンプルプラン","シンプルプラン"],
-    ["Yモバイルのキャラぷてにゃんの猫種は何？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"]
+    ["Yモバイル公式マスコットキャラクターの名前はなに？","ふてにゃん","ぶてにゃん","ぐてにゃん","ぷてにゃん","ふてにゃん"],    
+    ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","2003年","2005年","2007年","2010年","2007年"],
+    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","・シャープ","・京セラ","・富士通","・Google","・Google"],
+    ["YモバイルのAndroidシリーズの代表格といえば何シリーズ？","androidone","androidtwo","instagram","androidthree","androidfour"],
+    ["Yモバイルのキャラふてにゃんの猫種は何？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"],
 ];
 
 
@@ -136,9 +245,27 @@ var $A4 = document.getElementById("kaitou4");
 
 var Qcnt = Math.floor( Math.random() *3);
 
+// var Qcnt = 2
+
+var rondoms = [];
+var correct = 0
+
+
+// function arryCheck(){
+//     Qcnt
+//     if (rondoms.include(Qcnt)) {
+//         rondoms.push(Qcnt);
+//     }else{
+        
+//     }
+// }
+
 
 
 function Dset(){
+
+    bgmPause();
+    monmon();
     
     console.log(Qcnt);
 
@@ -157,8 +284,12 @@ function Dset(){
 }
 
 function Aset(){
-    
+
+    bgmPause();
+    monmon();
+
     console.log(Qcnt);
+    
 
     $Q.textContent = AQuestion[Qcnt][0];
     $A.textContent= AQuestion[Qcnt][1];
@@ -172,8 +303,12 @@ function Aset(){
 }
 
 function Sset(){
-    
+
+    bgmPause();
+    monmon();
     console.log(Qcnt);
+
+
 
     $Q.textContent = SQuestion[Qcnt][0];
     $A.textContent= SQuestion[Qcnt][1];
@@ -187,6 +322,9 @@ function Sset(){
 }
 
 function Uset(){
+
+    bgmPause();
+    monmon();
     
     console.log(Qcnt);
 
@@ -202,6 +340,9 @@ function Uset(){
 }
 
 function Yset(){
+
+    bgmPause();
+    monmon();
     
     console.log(Qcnt);
 
@@ -225,13 +366,83 @@ function Yset(){
 //正誤判定
 
 const clickHandler = (e) =>{
-    if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
-    alert("正解");
-
+    // if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
     
-    } else {
-    alert("不正解");
-    }
+    // correct++
+    // Qcnt++
+    // console.log(Qcnt)
+    
+    // } else {
+    
+    // }
+
+    switch (e.target.innerText) {
+                case DQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                seikai();
+                    Dset();
+                    
+                    break;
+
+                case AQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                seikai();
+                    Aset();
+                    
+                    break;
+
+                case SQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                seikai();
+                    Sset();
+                    
+                    break;
+
+                case UQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                seikai();
+                    Uset();
+                    
+                    break;
+
+                case YQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                seikai();
+                    Yset();
+                    
+                    break;
+            
+                default:
+                que.style.display ="none";
+                zan.style.display ="block";
+                    
+                    break;
+            }
+
+
+
+
+    if(correct >= 5){
+            alert("全問正解！！！")
+            que.style.display = "none";
+            ome.style.display = "block";
+
+
+        }else{
+
+           
+
+        }
+
+
+
+
+
 }
 
 $A.addEventListener('click',(e) =>{
