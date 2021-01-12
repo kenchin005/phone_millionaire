@@ -147,7 +147,8 @@ background-color: yellow;
 .stttt {
     position: relative;
     /* text-align: center; */
-    left: 160px;
+    left: 300px;
+    right: 200px;
     width: 900px;
     height: 400px;
 }
