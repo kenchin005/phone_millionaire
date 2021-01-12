@@ -135,9 +135,9 @@ background-color: yellow;
     border-radius: 50%;
     box-shadow: inset 0 0 50px #fff, inset 20px 0 60px violet, inset 0px 0 60px #0ff, inset 20px 0 300px violet, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 60px violet, 10px 0 60px #0ff;
     /* margin: 0 auto; */
-    width: 510px;
-    top: 120px;
-    left: 250px;
+    width: 420px;
+    top: 90px;
+    left: 89px;
 }
 
 .mahou img{
@@ -148,6 +148,8 @@ background-color: yellow;
     position: relative;
     /* text-align: center; */
     left: 160px;
+    width: 900px;
+    height: 400px;
 }
 .mahou,.start{
     position: absolute;
