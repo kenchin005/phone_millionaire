@@ -1,36 +1,63 @@
-.docomo{
+.docomo {
     width: 200px;
     height: 150px;
     background-color: brown;
     margin: 30px;
+    border: sandybrown;
+    border-radius: 24px;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
-.au{
+.au {
     width: 200px;
     height: 150px;
     background-color: orangered;
     margin: 30px;
+    border-radius: 24px;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
-.softbank{
+.softbank {
     width: 200px;
     height: 150px;
-    background-color: white;
+    background-color: black;
     margin: 30px;
+    color: white;
+    border-radius: 24px;
+    font-size: 42px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
-.uq{
+.uq {
     width: 200px;
     height: 150px;
     background-color: pink;
     margin: 30px;
+    border-radius: 24px;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
-.ymobile{
+.ymobile {
     width: 200px;
     height: 150px;
     background-color: red;
     margin: 30px;
+    border-radius: 24px;
+    font-size: 42px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 .docomo:hover{
@@ -60,10 +87,10 @@
 }
 
 
-.titleDisplay{
+.titleDisplay {
     width: 900px;
-    height: 600px;
-    margin: 50px auto;
+    height: 400px;
+    margin: 100px auto;
 }
 
 .titleText {
@@ -87,15 +114,20 @@
 
 .start{
     text-align: center;
+    z-index: 20;
 }
 
-button{
+/* button{
  font-size: 50px;
-}
+} */
 
 .zannen{
     text-align: center;
     font-size: 50px;
     margin: 100px auto;
     color: white;
+}
+
+h2{
+    font-size: 50px; 
 }

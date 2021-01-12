@@ -6,19 +6,36 @@
     <title>ケータイ＄ミリオネア</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleca.css">
+    <link rel="stylesheet" href="css/anime.css">
     
 </head>
 <body>
 
-    <div class="start" id="sta">
-        <h1>クイズ
+
+    <div class="toumei" id="tou"></div>
+
+<div class="stttt"  id="sta">
+    <div class="start">
+        <h1>クイズ<br>
         ケータイ＄ミリオネア</h1>
 
-     <button onclick="start()">
-         ゲームスタート
-     </button>
+     <h2 onclick="start()">
+         PRESS START<br>
+         TO BEGIN GAME
+     </h2>
 
     </div>
+
+    <div class="mahou">
+        <img  src="img/mahoujin.svg" alt="">
+    </div>
+
+
+</div>
+
+
+
+
 
 
 
@@ -30,7 +47,7 @@
 
         <div class="category">
 
-            <div class="docomo" onclick="Dset()">
+            <div class="docomo" onclick="DDset()">
                 <p>docomo</p>
             </div>
             <div class="au" onclick="Aset()">
@@ -98,12 +115,31 @@
     </div>
 
 
+<!-- 演出魔法陣 -->
+
+<div class="mahoujin" id="jin">
+    <img class="maho" src="img/mahoujin.svg" alt="">
+</div>
+
+
+<!-- カットイン -->
+<div class="div">
+
+</div>
+
+
+
+
 <!-- //////BGM////// -->
 
+<iframe src="bgm/muon.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
 <div class="bgm">
-    <audio id="titlebgm" preload="auto" src="bgm/title.mp3" type="audio/mp3"></audio>
+    <audio id="titlebgm" preload="auto" src="bgm/title.mp3" type="audio/mp3" ></audio>
     <audio id="seikai" preload="auto" src="bgm/seikai.mp3" type="audio/mp3"></audio>
-    <audio id="monmon" preload="auto" src="bgm/usagi.mp3" type="audio/mp3"></audio>
+    <audio id="monmon" preload="auto" src="bgm/mondai.mp3" type="audio/mp3"></audio>
+    <audio id="kettei" preload="auto" src="bgm/kettei.mp3" type="audio/mp3"></audio>
+    <audio id="beem" preload="auto" src="bgm/beem.mp3" type="audio/mp3"></audio>
 </div>
 
 
@@ -111,62 +147,198 @@
 
 
 <!-- </div> -->
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script>
 
-
+// おんがくけい！！！！！！！！！！！！！！！！！！！！！！！！！！
 
 // const button = getElementsByTagName("button")
 const bgm = document.querySelector("#titlebgm"); 
 const sei = document.querySelector("#seikai");
 const mon = document.querySelector("#monmon");
+const ke = document.querySelector("#kettei");
+const be = document.querySelector("#beem");
+
 
 function monmon(){
     mon.loop = true;
     mon.play();
 }
-
 function seikai() {
     sei.play();
 }
-
 function bgmPause() {
     bgm.pause();
 }
+function kettei() {
+    ke.play();
+}
+function beem() {
+    be.play();
+    be.volume = 1;
+}
 
 
-// button.addEventListener("click",()=>{
-//     bgm.play();
-// })
+// ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
+var body = document.body;
+
+
+var tou = document.getElementById("tou");
+
+tou.addEventListener("click",()=>{
+    bgm.play();
+
+//     $(body).animate({
+//     opacity: 0
+// }, 1);
+   
+//     $(body).animate({
+//     opacity: 100
+// }, 3000);
+
+    $('#sta').fadeIn(2000)
+    $(body).css({
+        "background-image": "url(img/back.jpg)",
+        "animation-delay":"10s"
+    });
+    
+    sta.style.display ="block";
+    tou.style.display ="none";
+})
+
+$(body).css("background-color", "black");
+
+
 
 var sta = document.getElementById("sta");
-
 var tit = document.getElementById("tit");
-
 var que = document.getElementById("que");
-
 var ome = document.getElementById("ome");
-
 var zan = document.getElementById("zan");
+var jin = document.getElementById("jin");
 
 
+sta.style.display ="none";
 tit.style.display ="none";
-
 que.style.display ="none";
-
 ome.style.display ="none";
-
 zan.style.display ="none";
+jin.style.display ="none";
 
 
 
 function start(){
+
+    kettei();
+    $('#sta').fadeOut(1500)
+
+
+    setTimeout(function(){
+
+    $(tit).fadeIn(1000)
     sta.style.display ="none";
     tit.style.display ="block";
+    
+
+},2000);
+
+
 
 
 }
+
+
+//------------------
+// async function kouka() {
+//     kettei();
+// }
+
+// async function mahoujin() {
+//   await kouka();
+
+//   $('#jin').fadeIn(2000)
+//   jin.style.display = "block"
+// }
+//-----------------
+
+
+
+function DDset(){
+    kettei();
+    $('#tit').fadeOut(1000)
+    setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
+    
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            Dset();
+
+        },4000);
+
+    },2000);
+}
+
+function AAset(){
+    
+
+
+    setTimeout(function(){
+    
+    
+    
+    },1000);
+}
+
+function SSset(){
+    
+    setTimeout(function(){
+    
+    
+    
+    },1000);
+}
+
+function UUset(){
+    
+    setTimeout(function(){
+    
+    
+    
+    },1000);
+}
+
+function YYset(){
+    
+    setTimeout(function(){
+    
+    
+    
+    },1000);
+}
+
+
+
+
+
+
+setTimeout(function(){
+
+
+
+},1000);
+
 
 
 

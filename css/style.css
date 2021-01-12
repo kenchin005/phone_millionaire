@@ -1,8 +1,6 @@
 * {box-sizing: border-box;}
 
-body{
-    background-image: url(../img/back.jpg);
-}
+
 
 /* h1{
     color: white;
@@ -20,13 +18,21 @@ p{
     
 } */
 
+.toumei{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+
 .frame {
     background-image: url(../img/frame.png);
     background-size: 100% 100%;
     background-color: rgb(22, 22, 173);
     width: 900px;
     height: 600px;
-    margin: 50px auto;
+    margin: 103px auto;
     border: 3px blue solid;
 }
 
@@ -42,11 +48,12 @@ p{
 }
 
 .textQuestion {
-    background-color: white;
+    /* background-color: white; */
     width: 637px;
     height: 155px;
     margin: 50px auto;
     /* padding-top: 5px; */
+    color: white;
 }
 
 /* .textQuestion:hover{
@@ -57,42 +64,49 @@ p{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: red;
-    width: 614px;
-    height: 300px;
+    /* background-color: red; */
+    width: 599px;
+    height: 335px;
     margin: 0px auto;
-    margin-top: 90px;
+    margin-top: 105px;
+    font-size: 30px;
+    color: white;
+    /* padding-top: 0px; */
     /* bottom: 0px; */
     padding-top: -8px;
 }
 .anser1{
-    background-color: white;
-    margin: 20px;
+    /* background-color: white; */
+    /* margin: 20px; */
     width: 200px;
     height: 80px;
+    padding-top: 20px;
 }
 
 
 
 .anser2{
-    background-color: white;
-    margin: 20px;
+    /* background-color: white; */
+    /* margin: 20px; */
     width: 200px;
     height: 80px;
+    padding-top: 20px;
 }
 
 .anser3{
-    background-color: white;
-    margin: 20px;
+    /* background-color: white; */
+    /* margin: 20px; */
     width: 200px;
     height: 80px;
+    padding-top: 20px;
 }
 
 .anser4{
-    background-color: white;
-    margin: 20px;
+    /* background-color: white; */
+    /* margin: 20px; */
     width: 200px;
     height: 80px;
+    padding-top: 20px;
 }
 
 .anser2:hover{
@@ -109,3 +123,32 @@ background-color: yellow;
 }
 
 
+.mahou {
+    z-index: 1;
+    animation: spin 50s linear infinite;
+    /* text-align: center; */
+    /* align-items: center; */
+    /* width: 300px; */
+    /* height: 300px; */
+    /* margin: 0 auto; */
+    /* margin-top: 140px; */
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #fff, inset 20px 0 60px violet, inset 0px 0 60px #0ff, inset 20px 0 300px violet, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 60px violet, 10px 0 60px #0ff;
+    /* margin: 0 auto; */
+    width: 510px;
+    top: 120px;
+    left: 250px;
+}
+
+.mahou img{
+    width: 100%;
+}
+
+.stttt {
+    position: relative;
+    /* text-align: center; */
+    left: 160px;
+}
+.mahou,.start{
+    position: absolute;
+}
