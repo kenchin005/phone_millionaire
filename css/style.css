@@ -29,11 +29,11 @@ p{
 .frame {
     background-image: url(../img/frame.png);
     background-size: 100% 100%;
-    background-color: rgb(22, 22, 173);
+
     width: 900px;
     height: 600px;
     margin: 103px auto;
-    border: 3px blue solid;
+
 }
 
 .frame img {
@@ -44,7 +44,7 @@ p{
 .textbox {
     /* margin-top: 0px; */
     padding-top: 1px;
-    background-color: aqua;
+
 }
 
 .textQuestion {
@@ -135,7 +135,8 @@ background-color: yellow;
     border-radius: 50%;
     box-shadow: inset 0 0 50px #fff, inset 20px 0 60px violet, inset 0px 0 60px #0ff, inset 20px 0 300px violet, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 60px violet, 10px 0 60px #0ff;
     /* margin: 0 auto; */
-    width: 420px;
+    width: 450px;
+    height: 450px;
 
 }
 
@@ -146,15 +147,57 @@ background-color: yellow;
 .stttt {
     position: relative;
     /* text-align: center; */
-    left: 300px;
-    right: 200px;
+    /* left: 300px; */
+    /* right: 200px; */
     width: 900px;
     height: 400px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    top: 0;
 }
-.mahou,.start{
+
+
+
+
+
+.mahou, .start {
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
-  
+    bottom: 0;
+    top: 0;
 }
+
+
+#fadeLayer {
+    position:absolute;
+    top:0px;
+    left:0px;
+  
+    width:100%;
+    height:100%;
+  
+    background-color:#000000;
+    opacity:0.5;
+    visibility:hidden;
+    z-index:1;
+    /* transition-duration: 2s; */
+  }
+
+  #maru {
+    color: red;
+    font-size: 185px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px -1px 0 #FFF, 0px 1px 0 #FFF, 0-1px 0 #FFF, -1px 0 0 #FFF, 1px 0 0 #FFF;
+    position: fixed;
+    top: 40%;
+    left: 37%;
+    /* right: 0; */
+    /* bottom: 0; */
+    /* margin: auto; */
+    z-index: 20;
+}
+

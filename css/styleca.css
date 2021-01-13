@@ -98,12 +98,37 @@
     text-align: center;
 }
 
-.omedeto{
+.omedeto {
     text-align: center;
     font-size: 50px;
-    margin: 100px auto;
+    font-weight: bold;
+    margin: 0px auto;
     color: white;
+    width: 900px;
+    height: 400px;
 }
+
+.omedeto img{
+    width: 100%;
+}
+
+.omePic{
+    width: 900px;
+    height: 400px;
+    display: flex;
+}
+.omePic p img{
+    width: 100%;
+    height: 100%;
+    
+}
+.omePic p{
+    width: 450px;
+    height: 320px;
+}
+
+
+
 
 .start h1{
     color: white;
@@ -129,6 +154,8 @@
     font-size: 50px;
     margin: 100px auto;
     color: white;
+    width: 900px;
+    height: 400px;
 }
 
 h2{

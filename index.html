@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleca.css">
     <link rel="stylesheet" href="css/anime.css">
-    
+    <link rel="stylesheet" href="css/animate.min.css">
 </head>
 <body>
 
@@ -105,13 +105,21 @@
 
 
     <div class="omedeto" id="ome">
-        おめでとう画面（仮）
+        <p>全問正解おめでとうございます！！</p>
+        <img src="img/omedetou.png" alt="">
+        <div class="omePic">
+
+            <p><img src="img/ukareruman.png" alt=""></p>
+            <p><img src="img/pistolwoman.png" alt=""></p>
+        </div>
 
     </div>
 
     <div class="zannen" id="zan"　>
-        残念画面
-        アンケートに答えたら景品がもらえるよ！仮
+        <p>おしい！！！</p>
+        <p>アンケートに答えて景品をもらおう！！</p>
+        <img src="img/womanshikushiku.png" alt="">
+        <img src="img/fusagikomuman.png" alt="">
     </div>
 
 
@@ -123,8 +131,8 @@
 
 
 <!-- カットイン -->
-<div class="div">
-
+<div id="maru" class="animated zoomIn delay-2s">
+    正解
 </div>
 
 
@@ -140,16 +148,55 @@
     <audio id="monmon" preload="auto" src="bgm/mondai.mp3" type="audio/mp3"></audio>
     <audio id="kettei" preload="auto" src="bgm/kettei.mp3" type="audio/mp3"></audio>
     <audio id="beem" preload="auto" src="bgm/beem.mp3" type="audio/mp3"></audio>
+    <audio id="choise" preload="auto" src="bgm/choise.mp3" type="audio/mp3"></audio>
+    <audio id="pinpon" preload="auto" src="bgm/pinpon.mp3" type="audio/mp3"></audio>
 </div>
 
-
-
+<!-- 黒フェード -->
+<div id="fadeLayer"></div>
 
 
 <!-- </div> -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script>
+
+//フェードーーーーーーーーーー
+
+var kuro = document.getElementById("fadeLayer");
+
+function fade() {
+
+
+      var maxheightA = Math.max(document.body.clientHeight, document.body.scrollHeight)
+      var maxheightB = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight)
+      var MaxHeight = Math.max(maxheightA,maxheightB);
+      kuro.style.height = MaxHeight+"px";
+
+      var maxwidthA = Math.max(document.body.clientWidth, document.body.scrollWidth)
+      var maxwidthB = Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth)
+      var MaxWidth = Math.max(maxwidthA, maxwidthB);
+      kuro.style.width = MaxWidth + "px";
+
+    //   setTimeout(function(){
+        kuro.style.visibility = "visible";
+    //   $(kuro).css({
+    //     "opacity":"0.5",
+    //     "transition-duration": "2s"
+    //   })
+      
+
+    // },1000);
+
+
+    }
+
+function hidden() {
+    kuro.style.visibility = "hidden";    
+}
+
+
+
 
 // おんがくけい！！！！！！！！！！！！！！！！！！！！！！！！！！
 
@@ -159,6 +206,8 @@ const sei = document.querySelector("#seikai");
 const mon = document.querySelector("#monmon");
 const ke = document.querySelector("#kettei");
 const be = document.querySelector("#beem");
+const cho = document.querySelector("#choise");
+const pi = document.querySelector("#pinpon");
 
 
 function monmon(){
@@ -177,6 +226,14 @@ function kettei() {
 function beem() {
     be.play();
     be.volume = 1;
+}
+function choise() {
+    cho.play();
+    cho.volume = 1;
+}
+function pinpon() {
+    pi.play();
+    cho.volume = 1;
 }
 
 
@@ -200,8 +257,10 @@ tou.addEventListener("click",()=>{
 
     $('#sta').fadeIn(2000)
     $(body).css({
-        "background-image": "url(img/back.jpg)",
-        "animation-delay":"10s"
+        "background-image": "url(img/space.jpg)",
+        "width": "100vw",
+    "height": "100vh",
+        "transition-duration":"2s"
     });
     
     sta.style.display ="block";
@@ -218,6 +277,7 @@ var que = document.getElementById("que");
 var ome = document.getElementById("ome");
 var zan = document.getElementById("zan");
 var jin = document.getElementById("jin");
+var maru = document.getElementById("maru");
 
 
 sta.style.display ="none";
@@ -226,6 +286,7 @@ que.style.display ="none";
 ome.style.display ="none";
 zan.style.display ="none";
 jin.style.display ="none";
+maru.style.display ="none";
 
 
 
@@ -240,6 +301,8 @@ function start(){
     $(tit).fadeIn(1000)
     sta.style.display ="none";
     tit.style.display ="block";
+
+
     
 
 },2000);
@@ -249,6 +312,21 @@ function start(){
 
 }
 
+function ma(){
+ $(maru).addClass("animate__animated animate__delay-2s animate__zoomIn");
+    maru.style.display ="block";
+}
+
+function maruH() {
+
+    $(maru).removeClass("animate__animated animate__delay-2s animate__zoomIn");
+    maru.style.display ="none";
+    
+}
+
+//animate__animated animate__delay-2s animate__zoomIn
+//animated zoomIn delay-2s
+//animate__animated animate__infinite animate__shakeX
 
 //------------------
 // async function kouka() {
@@ -436,6 +514,21 @@ var correct = 0
 
 function Dset(){
 
+    if(correct >= 2){
+        // setTimeout(function(){
+            que.style.display = "none";
+            ome.style.display = "block";
+        // },4010);
+        return;
+
+        }else{
+
+           
+
+        }
+
+
+
     bgmPause();
     monmon();
     
@@ -537,86 +630,6 @@ function Yset(){
 
 //正誤判定
 
-const clickHandler = (e) =>{
-    // if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
-    
-    // correct++
-    // Qcnt++
-    // console.log(Qcnt)
-    
-    // } else {
-    
-    // }
-
-    switch (e.target.innerText) {
-                case DQuestion[Qcnt][5]:
-                Qcnt++
-                correct++
-                seikai();
-                    Dset();
-                    
-                    break;
-
-                case AQuestion[Qcnt][5]:
-                Qcnt++
-                correct++
-                seikai();
-                    Aset();
-                    
-                    break;
-
-                case SQuestion[Qcnt][5]:
-                Qcnt++
-                correct++
-                seikai();
-                    Sset();
-                    
-                    break;
-
-                case UQuestion[Qcnt][5]:
-                Qcnt++
-                correct++
-                seikai();
-                    Uset();
-                    
-                    break;
-
-                case YQuestion[Qcnt][5]:
-                Qcnt++
-                correct++
-                seikai();
-                    Yset();
-                    
-                    break;
-            
-                default:
-                que.style.display ="none";
-                zan.style.display ="block";
-                    
-                    break;
-            }
-
-
-
-
-    if(correct >= 5){
-            alert("全問正解！！！")
-            que.style.display = "none";
-            ome.style.display = "block";
-
-
-        }else{
-
-           
-
-        }
-
-
-
-
-
-}
-
 $A.addEventListener('click',(e) =>{
     console.log(e);
     clickHandler(e);
@@ -633,6 +646,91 @@ $A3.addEventListener('click',(e) =>{
 $A4.addEventListener('click',(e) =>{
     clickHandler(e);
 });
+
+
+const clickHandler = (e) =>{
+    // if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
+        fade();
+    // correct++
+    // Qcnt++
+    // console.log(Qcnt)
+    
+    // } else {
+    
+    // }
+
+    switch (e.target.innerText) {
+                case DQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                choise();
+                ma();
+                setTimeout(function(){
+                    pinpon();
+                    setTimeout(function(){
+                        Dset();
+                        hidden();
+                        maruH();
+                        
+
+                    },2000);
+                },2000);
+                    
+                
+                    
+                    break;
+
+                case AQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                choise();
+                    Aset();
+                    
+                    break;
+
+                case SQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                choise();
+                    Sset();
+                    
+                    break;
+
+                case UQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                choise();
+                    Uset();
+                    
+                    break;
+
+                case YQuestion[Qcnt][5]:
+                Qcnt++
+                correct++
+                choise();
+                    Yset();
+                    
+                    break;
+            
+                default:
+                que.style.display ="none";
+                zan.style.display ="block";
+                    
+                    break;
+            }
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 
