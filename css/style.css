@@ -111,15 +111,19 @@ p{
 
 .anser2:hover{
 background-color: yellow;
+cursor : pointer;
 }
 .anser1:hover{
     background-color: yellow;
+    cursor : pointer;
 }
 .anser3:hover{
     background-color: yellow;
+    cursor : pointer;
 }
 .anser4:hover{
     background-color: yellow;
+    cursor : pointer;
 }
 
 
