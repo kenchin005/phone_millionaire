@@ -50,16 +50,16 @@
             <div class="docomo" onclick="DDset()">
                 <p>docomo</p>
             </div>
-            <div class="au" onclick="Aset()">
+            <div class="au" onclick="AAset()">
                 <p>au</p>
             </div>
-            <div class="softbank" onclick="Sset()">
+            <div class="softbank" onclick="SSset()">
                 <p>softbank</p>
             </div>
-            <div class="uq" onclick="Uset()">
+            <div class="uq" onclick="UUset()">
                 <p>UQ</p>
             </div>
-            <div class="ymobile" onclick="Yset()">
+            <div class="ymobile" onclick="YYset()">
                 <p>Y!mobile</p>
             </div>
 
@@ -134,6 +134,10 @@
 <div id="maru" class="animated zoomIn delay-2s">
     正解
 </div>
+
+<!-- <div class="cutin">
+    <video src="mov/cutinRed.mp4" loop autoplay muted></video>
+</div> -->
 
 
 
@@ -369,41 +373,103 @@ function DDset(){
 }
 
 function AAset(){
-    
-
-
+    kettei();
+    $('#tit').fadeOut(1000)
     setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
     
-    
-    
-    },1000);
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            Aset();
+
+        },4000);
+
+    },2000);
 }
 
 function SSset(){
-    
+    kettei();
+    $('#tit').fadeOut(1000)
     setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
     
-    
-    
-    },1000);
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            Sset();
+
+        },4000);
+
+    },2000);
 }
 
 function UUset(){
-    
+    kettei();
+    $('#tit').fadeOut(1000)
     setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
     
-    
-    
-    },1000);
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            Uset();
+
+        },4000);
+
+    },2000);
 }
 
 function YYset(){
-    
+    kettei();
+    $('#tit').fadeOut(1000)
     setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
     
-    
-    
-    },1000);
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            Yset();
+
+        },4000);
+
+    },2000);
 }
 
 
@@ -510,14 +576,33 @@ var correct = 0
 //     }
 // }
 
+// function cor() {
+//     if(correct >= 5){
+//         // setTimeout(function(){
+//             que.style.display = "none";
+//             ome.style.display = "block";
+//             mon.pause();
+
+//         // },4010);
+//         return;
+
+//         }else{
+
+           
+
+//         }
+// }
+
 
 
 function Dset(){
 
-    if(correct >= 2){
+    if(correct >= 5){
         // setTimeout(function(){
             que.style.display = "none";
             ome.style.display = "block";
+            mon.pause();
+
         // },4010);
         return;
 
@@ -526,7 +611,6 @@ function Dset(){
            
 
         }
-
 
 
     bgmPause();
@@ -550,6 +634,21 @@ function Dset(){
 
 function Aset(){
 
+    if(correct >= 5){
+        // setTimeout(function(){
+            que.style.display = "none";
+            ome.style.display = "block";
+            mon.pause();
+
+        // },4010);
+        return;
+
+        }else{
+
+           
+
+        }
+
     bgmPause();
     monmon();
 
@@ -568,6 +667,21 @@ function Aset(){
 }
 
 function Sset(){
+
+    if(correct >= 5){
+        // setTimeout(function(){
+            que.style.display = "none";
+            ome.style.display = "block";
+            mon.pause();
+
+        // },4010);
+        return;
+
+        }else{
+
+           
+
+        }
 
     bgmPause();
     monmon();
@@ -588,6 +702,21 @@ function Sset(){
 
 function Uset(){
 
+    if(correct >= 5){
+        // setTimeout(function(){
+            que.style.display = "none";
+            ome.style.display = "block";
+            mon.pause();
+
+        // },4010);
+        return;
+
+        }else{
+
+           
+
+        }
+
     bgmPause();
     monmon();
     
@@ -605,6 +734,21 @@ function Uset(){
 }
 
 function Yset(){
+
+    if(correct >= 5){
+        // setTimeout(function(){
+            que.style.display = "none";
+            ome.style.display = "block";
+            mon.pause();
+
+        // },4010);
+        return;
+
+        }else{
+
+           
+
+        }
 
     bgmPause();
     monmon();
@@ -651,6 +795,8 @@ $A4.addEventListener('click',(e) =>{
 const clickHandler = (e) =>{
     // if(e.target.innerText === DQuestion[Qcnt][5]||e.target.innerText === AQuestion[Qcnt][5]||e.target.innerText === SQuestion[Qcnt][5]||e.target.innerText === UQuestion[Qcnt][5]||e.target.innerText === YQuestion[Qcnt][5]) {
         fade();
+        choise();
+
     // correct++
     // Qcnt++
     // console.log(Qcnt)
@@ -663,14 +809,15 @@ const clickHandler = (e) =>{
                 case DQuestion[Qcnt][5]:
                 Qcnt++
                 correct++
-                choise();
                 ma();
                 setTimeout(function(){
                     pinpon();
                     setTimeout(function(){
+
                         Dset();
                         hidden();
                         maruH();
+
                         
 
                     },2000);
@@ -683,39 +830,77 @@ const clickHandler = (e) =>{
                 case AQuestion[Qcnt][5]:
                 Qcnt++
                 correct++
-                choise();
-                    Aset();
-                    
+                ma();
+                setTimeout(function(){
+                    pinpon();
+                    setTimeout(function(){
+                        Aset();
+                        hidden();
+                        maruH();
+                        
+
+                    },2000);
+                },2000);
                     break;
 
                 case SQuestion[Qcnt][5]:
                 Qcnt++
                 correct++
-                choise();
-                    Sset();
-                    
+                ma();
+                setTimeout(function(){
+                    pinpon();
+                    setTimeout(function(){
+                        Sset();
+                        hidden();
+                        maruH();
+                        
+
+                    },2000);
+                },2000);
                     break;
 
                 case UQuestion[Qcnt][5]:
                 Qcnt++
                 correct++
-                choise();
-                    Uset();
-                    
+                ma();
+                setTimeout(function(){
+                    pinpon();
+                    setTimeout(function(){
+                        Uset();
+                        hidden();
+                        maruH();
+                        
+
+                    },2000);
+                },2000);
                     break;
 
                 case YQuestion[Qcnt][5]:
                 Qcnt++
                 correct++
-                choise();
-                    Yset();
-                    
+                ma();
+                setTimeout(function(){
+                    pinpon();
+                    setTimeout(function(){
+                        Yset();
+                        hidden();
+                        maruH();
+                        
+
+                    },2000);
+                },2000);
                     break;
             
                 default:
-                que.style.display ="none";
-                zan.style.display ="block";
+                    //はずれるやつ
+
+                setTimeout(function(){
+                    que.style.display ="none";
+                    zan.style.display ="block";
+                    hidden();
+                    mon.pause();
                     
+                },2000);
                     break;
             }
 
