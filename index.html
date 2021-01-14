@@ -85,20 +85,32 @@
 
             </div>
             <div class="textAnser">
-                <div class="anser1" id="kaitou">
-                    解答
+                <div class="aaa">
+                    <div class="anser1" id="kaitou">
+                        解答
+                    </div>
+                    <div class="anser2" id="kaitou2">
+                        解答
+                    </div>
                 </div>
-                <div class="anser2" id="kaitou2">
-                    解答
-                </div>
-                <div class="anser3" id="kaitou3">
-                    解答
-                </div>
-                <div class="anser4" id="kaitou4">
-                    解答
+                <div class="bbb">
+                    <div class="anser3" id="kaitou3">
+                        解答
+                    </div>
+                    <div class="anser4" id="kaitou4">
+                        解答
+                    </div>
                 </div>
 
             </div>
+        </div>
+
+    </div>
+    <div class="lifeline" id="life">
+        <div class="help">
+            <p class="fifty">50:50</p>
+            <p><img src="img/tel.svg" alt=""></p>
+            <p><img src="img/audiense.svg" alt=""></p>
         </div>
 
     </div>
@@ -106,12 +118,17 @@
 
     <div class="omedeto" id="ome">
         <p>全問正解おめでとうございます！！</p>
-        <img src="img/omedetou.png" alt="">
-        <div class="omePic">
 
-            <p><img src="img/ukareruman.png" alt=""></p>
-            <p><img src="img/pistolwoman.png" alt=""></p>
-        </div>
+        <p class="ticket" id="tickets"><img src="img/ticket.png" alt=""></p>
+        <p class="fukubukuro" id="fukubukuros"><img src="img/fukubukuro.png" alt=""></p>
+
+
+        <a href="index.html"><p class="top">TOP</p></a>
+        <!-- <div class="omePic">
+    
+            
+
+        </div> -->
 
     </div>
 
@@ -119,7 +136,7 @@
         <p>おしい！！！</p>
         <p>アンケートに答えて景品をもらおう！！</p>
         <img src="img/womanshikushiku.png" alt="">
-        <img src="img/fusagikomuman.png" alt="">
+        <a href="index.html"><p class="top1">TOP</p></a>
     </div>
 
 
@@ -154,6 +171,7 @@
     <audio id="beem" preload="auto" src="bgm/beem.mp3" type="audio/mp3"></audio>
     <audio id="choise" preload="auto" src="bgm/choise.mp3" type="audio/mp3"></audio>
     <audio id="pinpon" preload="auto" src="bgm/pinpon.mp3" type="audio/mp3"></audio>
+    <audio id="dondon" preload="auto" src="bgm/don.mp3" type="audio/mp3"></audio>
 </div>
 
 <!-- 黒フェード -->
@@ -212,6 +230,7 @@ const ke = document.querySelector("#kettei");
 const be = document.querySelector("#beem");
 const cho = document.querySelector("#choise");
 const pi = document.querySelector("#pinpon");
+const don = document.querySelector("#dondon");
 
 
 function monmon(){
@@ -238,6 +257,10 @@ function choise() {
 function pinpon() {
     pi.play();
     cho.volume = 1;
+}
+function dondon() {
+    don.play();
+    don.volume = 1;
 }
 
 
@@ -282,6 +305,9 @@ var ome = document.getElementById("ome");
 var zan = document.getElementById("zan");
 var jin = document.getElementById("jin");
 var maru = document.getElementById("maru");
+var lif = document.getElementById("life");
+var tic = document.getElementById("tickets");
+var fuk = document.getElementById("fukubukuros");
 
 
 sta.style.display ="none";
@@ -291,7 +317,11 @@ ome.style.display ="none";
 zan.style.display ="none";
 jin.style.display ="none";
 maru.style.display ="none";
+lif.style.display ="none";
+tic.style.display ="none";
+fuk.style.display ="none";
 
+var player = 0
 
 
 function start(){
@@ -327,6 +357,8 @@ function maruH() {
     maru.style.display ="none";
     
 }
+
+
 
 //animate__animated animate__delay-2s animate__zoomIn
 //animated zoomIn delay-2s
@@ -489,61 +521,64 @@ setTimeout(function(){
 
 
 var DQuestion = [
-    ["現在のdocomoショップ数はいくつ？","約1000","約2000","約3000","約4000","約2000"],
+["現在一般的に普及しているスマホの代表的なOSといえば「Android」ともうひとつはなに？","・AOs","・sOS","・iOS","・COS","・iOS"],
     ["docomoが新しく発表したブランド名は？","adamo","ahamo","asimo","asobo","ahamo"],
+    ["スマホのGALAXYはサムスン製、PixelはGoogle製、iPhoneはApple製。ではXpariaは何製？","シャープ","京セラ","富士通","ソニー","ソニー"],
+    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","・imstagram","・instagrom","・instagram","・inspagram","・instagram"],
     ["docomoのキャラクターの種類はライオンですがその名前は？","ライマル","アニマル","ドニマル","ネコマル","ドニマル"],
     ["この中でd払いができないお店はどれ？","ミスタードーナツ","モスバーガー","すき家","マクドナルド","マクドナルド"],
-    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","・シャープ","・京セラ","・富士通","・サムスン","・サムスン"],
-    ["現在一般的に普及しているスマホの代表的なOSといえば「Android」ともうひとつはなに？","・AOs","・sOS","・iOS","・COS","・iOS"],
-    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","・imstagram","・instagrom","・instagram","・inspagram","・instagram"],
-    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","・6インチ","・6.1インチ","・6.2インチ","・6.3インチ","・6.1インチ"]
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","・6インチ","・6.1インチ","・6.2インチ","・6.3インチ","・6.1インチ"],
+    ["現在のdocomoショップ数はいくつ？","約1000","約2000","約3000","約4000","約2000"]
 
 ];
 
 var AQuestion = [
+    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","・シャープ","・京セラ","・富士通","・サムスン","・サムスン"],
     ["auのマスコットキャラの三太郎は桃太郎・浦島太郎・あとひとつは何太郎？","金太郎","小太郎","Q太郎","一太郎","金太郎"],
     ["auのCMでかぐや姫を演じている俳優は誰？","菜々緒","浜辺美波","広瀬すず","有村架純","有村架純"],
-    ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"],
-    ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","２００３年","２００５年","２００７年","２０１０年","２００７年"],
-    ["スマホのGALAXYはサムスン製、PixelはGoogle製、iPhoneはApple製。ではXpariaは何製？","シャープ","京セラ","富士通","ソニー","ソニー"],
     ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
-    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"],
+    ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"],
     ["auのワイド学割は何才までOK？","18才","22才","29才","40才","29才"],
+    ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","２００３年","２００５年","２００７年","２０１０年","２００７年"],
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"]
+    
 
 
 ];
 
 var SQuestion = [
-    ["ソフトバンクのお父さんは現在何代目？","初代","二代目","三代目","四代目","二代目"],
+["ソフトバンク光のキャラクターはとあるポケモンですが、その名前はなに？","ピチュー","ピカチュウ","ライチュウ","チュウチュウ","ピカチュウ"],
     ["GooglePixelを独占販売しているキャリアはどこ？","docomo","au","softbank","楽天","softbank"],
-    ["ソフトバンクのお父さんの犬種は？","柴犬","シーズー","北海道犬","パグ","北海道犬"],
-    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","シャープ","京セラ","富士通","Google","Google"],
     ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
+    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","シャープ","京セラ","富士通","Google","Google"],
+    ["ソフトバンクのお父さんの犬種は？","柴犬","秋田犬","北海道犬","土佐犬","北海道犬"],
     ["ソフトバンクで最近CMでも謳っている「5Gって〇〇〇〇〇？」〇に入る文字を答えよ","しんちゃん","攻殻機動隊","ドラえもん","テクノロジー","ドラえもん"],
-    ["ソフトバンクのCMでおなじみの家族は現在何人家族？","3人","4人","5人","6人","5人"],
-    ["ソフトバンク光のキャラクターはとあるポケモンですが、その名前はなに？","ピチュー","ピカチュウ","ライチュウ","チュウチュウ","ピカチュウ"],
+    ["ソフトバンクのお父さんは現在何代目？","初代","二代目","三代目","四代目","二代目"],
+    ["ソフトバンクのCMでおなじみのドラえもん。この中でスネ夫を演じているのは誰","古市和寿","古市一寿","古市規寿","古市憲寿","古市憲寿"]
+    
 
 ];
 
 var UQuestion = [
-    ["UQモバイルのショップ数はいくつ？","約80","約180","約280","約380","約280"],
-    ["UQのキャラクター、ブルーガチャムクの出身地はどこ？","ブループラネット","ブルーテラ","ブルースター","ブルーコスモ","ブループラネット"],
+    
+["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
     ["UQのポケットWi-Fiのブランド名は？","UQWiMAX","UQMAXPOWER","UQHiMAX","UQMAX","UQWiMAX"],
     ["現在人気のiPhoneSeシリーズ。現在出ている機種は何世代目？","第一世代","第二世代","第三世代","第四世代","第二世代"],
-    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","シャープ","京セラ","富士通","サムスン","サムスン"],
     ["現在一般的に普及しているスマホの代表的なOSといえば「Android」ともうひとつはなに？","AOs","sOS","iOS","COS","iOS"],
-    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
-    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"]
+    ["UQのキャラクター、ブルーガチャムクの出身地はどこ？","ブループラネット","ブルーテラ","ブルースター","ブルーコスモ","ブループラネット"],
+    ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","シャープ","京セラ","富士通","サムスン","サムスン"],
+    ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"],
+    ["UQモバイルのショップ数はいくつ？","約80","約180","約280","約380","約280"]
 ];
 
 var YQuestion = [
-    ["Yモバイルのショップ数はいくつ？","約200","約600","約900","約1500","約900"],
+    ["YモバイルのAndroidシリーズの代表格といえば何シリーズ？","androidone","androidtwo","instagram","androidthree","androidfour"],
+    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","・シャープ","・京セラ","・富士通","・Google","・Google"],
     ["Yモバイルが新しく発表したプランの名前は？","スマホプラン","ベーシックプラン","Yプラン","シンプルプラン","シンプルプラン"],
     ["Yモバイル公式マスコットキャラクターの名前はなに？","ふてにゃん","ぶてにゃん","ぐてにゃん","ぷてにゃん","ふてにゃん"],    
     ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","2003年","2005年","2007年","2010年","2007年"],
-    ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","・シャープ","・京セラ","・富士通","・Google","・Google"],
-    ["YモバイルのAndroidシリーズの代表格といえば何シリーズ？","androidone","androidtwo","instagram","androidthree","androidfour"],
     ["Yモバイルのキャラふてにゃんの猫種は何？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"],
+    ["Yモバイルのショップ数はいくつ？","約200","約600","約900","約1500","約900"]
 ];
 
 
@@ -593,15 +628,47 @@ var correct = 0
 //         }
 // }
 
+function omedetougozaimasu(){
+
+            $(body).css({
+                "background-image": "url(img/kaminosyukuhuku.jpg)",
+                "width": "100vw",
+            "height": "100vh",
+            "background-repeat":"repeat",
+                "background-size":"100% 100%",
+                "transition-duration":"2s"
+            });
+            que.style.display = "none";
+            lif.style.display ="none";
+            ome.style.display = "block";
+            $(ome).addClass("animate__animated animate__delay-2s animate__fadeIn");
+            mon.pause();
+
+            $(tic).addClass("animate__animated animate__delay-2s animate__fadeIn animate__slower");
+            tic.style.display ="block";
+
+            setTimeout(function(){
+            
+                $(fuk).addClass("animate__animated animate__delay-2s animate__fadeInDown animate__slower");
+                fuk.style.display ="block"; 
+
+            },3000);
+            
+            player++
+
+
+
+
+}
+
+
 
 
 function Dset(){
 
-    if(correct >= 5){
+    if(correct >= 1){
         // setTimeout(function(){
-            que.style.display = "none";
-            ome.style.display = "block";
-            mon.pause();
+            omedetougozaimasu();
 
         // },4010);
         return;
@@ -626,7 +693,34 @@ function Dset(){
     $A3.textContent= DQuestion[Qcnt][3];
     $A4.textContent= DQuestion[Qcnt][4];
 
+
+    $A.style.display ="none";
+    $A2.style.display ="none";
+    $A3.style.display ="none";
+    $A4.style.display ="none";
+
+setTimeout(function(){
+    dondon();
+    $A.style.display ="block";
+    setTimeout(function(){
+        dondon();
+        $A2.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A3.style.display ="block";
+            setTimeout(function(){
+                dondon();
+            $A4.style.display ="block";
+
+
+},1000);
+},1000);
+},1000);
+},1000);
+
+
     que.style.display = "block"; 
+    lif.style.display ="block";
     tit.style.display ="none";
     
 
@@ -635,12 +729,7 @@ function Dset(){
 function Aset(){
 
     if(correct >= 5){
-        // setTimeout(function(){
-            que.style.display = "none";
-            ome.style.display = "block";
-            mon.pause();
-
-        // },4010);
+        omedetougozaimasu();
         return;
 
         }else{
@@ -661,7 +750,32 @@ function Aset(){
     $A3.textContent= AQuestion[Qcnt][3];
     $A4.textContent= AQuestion[Qcnt][4];
 
+    $A.style.display ="none";
+    $A2.style.display ="none";
+    $A3.style.display ="none";
+    $A4.style.display ="none";
+
+setTimeout(function(){
+    dondon();
+    $A.style.display ="block";
+    setTimeout(function(){
+        dondon();
+        $A2.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A3.style.display ="block";
+            setTimeout(function(){
+                dondon();
+            $A4.style.display ="block";
+
+
+},1000);
+},1000);
+},1000);
+},1000);
+
     que.style.display = "block"; 
+    lif.style.display ="block";
     tit.style.display ="none";
 
 }
@@ -669,12 +783,7 @@ function Aset(){
 function Sset(){
 
     if(correct >= 5){
-        // setTimeout(function(){
-            que.style.display = "none";
-            ome.style.display = "block";
-            mon.pause();
-
-        // },4010);
+        omedetougozaimasu();
         return;
 
         }else{
@@ -695,7 +804,32 @@ function Sset(){
     $A3.textContent= SQuestion[Qcnt][3];
     $A4.textContent= SQuestion[Qcnt][4];
 
+    $A.style.display ="none";
+    $A2.style.display ="none";
+    $A3.style.display ="none";
+    $A4.style.display ="none";
+
+setTimeout(function(){
+    dondon();
+    $A.style.display ="block";
+    setTimeout(function(){
+        dondon();
+        $A2.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A3.style.display ="block";
+            setTimeout(function(){
+                dondon();
+            $A4.style.display ="block";
+
+
+},1000);
+},1000);
+},1000);
+},1000);
+
     que.style.display = "block"; 
+    lif.style.display ="block";
     tit.style.display ="none";
 
 }
@@ -703,12 +837,7 @@ function Sset(){
 function Uset(){
 
     if(correct >= 5){
-        // setTimeout(function(){
-            que.style.display = "none";
-            ome.style.display = "block";
-            mon.pause();
-
-        // },4010);
+        omedetougozaimasu();
         return;
 
         }else{
@@ -728,7 +857,32 @@ function Uset(){
     $A3.textContent= UQuestion[Qcnt][3];
     $A4.textContent= UQuestion[Qcnt][4];
 
+    $A.style.display ="none";
+    $A2.style.display ="none";
+    $A3.style.display ="none";
+    $A4.style.display ="none";
+
+setTimeout(function(){
+    dondon();
+    $A.style.display ="block";
+    setTimeout(function(){
+        dondon();
+        $A2.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A3.style.display ="block";
+            setTimeout(function(){
+                dondon();
+            $A4.style.display ="block";
+
+
+},1000);
+},1000);
+},1000);
+},1000);
+
     que.style.display = "block"; 
+    lif.style.display ="block";
     tit.style.display ="none";
 
 }
@@ -736,12 +890,7 @@ function Uset(){
 function Yset(){
 
     if(correct >= 5){
-        // setTimeout(function(){
-            que.style.display = "none";
-            ome.style.display = "block";
-            mon.pause();
-
-        // },4010);
+        omedetougozaimasu();
         return;
 
         }else{
@@ -761,7 +910,34 @@ function Yset(){
     $A3.textContent= YQuestion[Qcnt][3];
     $A4.textContent= YQuestion[Qcnt][4];
 
+    $A.style.display ="none";
+    $A2.style.display ="none";
+    $A3.style.display ="none";
+    $A4.style.display ="none";
+
+setTimeout(function(){
+    dondon();
+    $A.style.display ="block";
+    setTimeout(function(){
+        dondon();
+        $A2.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A3.style.display ="block";
+            setTimeout(function(){
+                dondon();
+            $A4.style.display ="block";
+
+
+},1000);
+},1000);
+},1000);
+},1000);
+
+
+
     que.style.display = "block"; 
+    lif.style.display ="block";
     tit.style.display ="none";
 
 }
@@ -896,6 +1072,7 @@ const clickHandler = (e) =>{
 
                 setTimeout(function(){
                     que.style.display ="none";
+                    lif.style.display ="none";
                     zan.style.display ="block";
                     hidden();
                     mon.pause();
