@@ -108,9 +108,9 @@
     </div>
     <div class="lifeline" id="life">
         <div class="help">
-            <p class="fifty" id="fift"　>50:50</p>
-            <p id="telefon"><img src="img/tel.svg" alt=""></p>
-            <p id="audiense"><img src="img/audiense.svg" alt=""></p>
+            <p class="fifty" id="fift" onclick="fiftyfifty()">50:50</p>
+            <p id="telefon" onclick="teltel()"><img src="img/tel.svg" alt=""></p>
+            <p id="audiense" onclick="audaud()"><img src="img/audiense.svg" alt=""></p>
         </div>
 
     </div>
@@ -308,9 +308,9 @@ var maru = document.getElementById("maru");
 var lif = document.getElementById("life");
 var tic = document.getElementById("tickets");
 var fuk = document.getElementById("fukubukuros");
-var fuk = document.getElementById("audiense");
-var fuk = document.getElementById("telefon");
-var fuk = document.getElementById("fift");
+var aud = document.getElementById("audiense");
+var tel = document.getElementById("telefon");
+var fif = document.getElementById("fift");
 
 
 sta.style.display ="none";
@@ -338,8 +338,6 @@ function start(){
     $(tit).fadeIn(1000)
     sta.style.display ="none";
     tit.style.display ="block";
-
-
     
 
 },2000);
@@ -360,6 +358,42 @@ function maruH() {
     maru.style.display ="none";
     
 }
+
+function fiftyfifty() {
+    fade();
+    choise();
+
+    setTimeout(function(){
+        hidden();
+
+    },2000);
+    
+}
+
+function teltel() {
+    fade();
+    choise();
+
+    setTimeout(function(){
+        hidden();
+
+    },2000);
+    
+}
+
+function audaud() {
+    fade();
+    choise();
+
+    setTimeout(function(){
+        hidden();
+
+    },2000);
+    
+}
+
+
+
 
 
 
