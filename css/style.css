@@ -253,9 +253,18 @@ p{
     font-size: 30px;
     padding-top: 27px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
 /* .lifeline p img{
     width: 100%;
 } */
+
+#telefon{
+    cursor: pointer;
+}
+
+#audiense{
+    cursor: pointer;
+}

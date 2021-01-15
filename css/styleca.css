@@ -173,14 +173,22 @@
  font-size: 50px;
 } */
 
-.zannen{
+.zannen {
     text-align: center;
     font-size: 50px;
-    margin: 100px auto;
+    margin: 30px auto;
     color: white;
     width: 900px;
+    line-height: 20px;
     height: 400px;
 }
+
+.zannen img{
+
+        width: 40%;
+    
+}
+
 
 h2{
     font-size: 50px; 
@@ -209,6 +217,6 @@ h2{
     margin-top: 450px;
 }
 
-.top1 {
-    margin-top: 0px;
-}
+/* .top1 { */
+    /* margin-top: 0px; */
+/* } */

@@ -172,6 +172,7 @@
     <audio id="choise" preload="auto" src="bgm/choise.mp3" type="audio/mp3"></audio>
     <audio id="pinpon" preload="auto" src="bgm/pinpon.mp3" type="audio/mp3"></audio>
     <audio id="dondon" preload="auto" src="bgm/don.mp3" type="audio/mp3"></audio>
+    <audio id="kirakira" preload="auto" src="bgm/kirakira.mp3" type="audio/mp3"></audio>
 </div>
 
 <!-- 黒フェード -->
@@ -231,6 +232,7 @@ const be = document.querySelector("#beem");
 const cho = document.querySelector("#choise");
 const pi = document.querySelector("#pinpon");
 const don = document.querySelector("#dondon");
+const kir = document.querySelector("#kirakira");
 
 
 function monmon(){
@@ -262,6 +264,11 @@ function dondon() {
     don.play();
     don.volume = 1;
 }
+function kirakira() {
+    kir.play();
+    kir.volume = 1;
+}
+
 
 
 // ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
@@ -359,16 +366,12 @@ function maruH() {
     
 }
 
-function fiftyfifty() {
-    fade();
-    choise();
 
-    setTimeout(function(){
-        hidden();
 
-    },2000);
-    
-}
+
+
+
+
 
 function teltel() {
     fade();
@@ -377,6 +380,8 @@ function teltel() {
     setTimeout(function(){
         hidden();
 
+
+        $(tel).css("opacity","0.1");
     },2000);
     
 }
@@ -387,6 +392,8 @@ function audaud() {
 
     setTimeout(function(){
         hidden();
+
+        $(aud).css("opacity","0.1");
 
     },2000);
     
@@ -631,6 +638,48 @@ var $A4 = document.getElementById("kaitou4");
 //     console.log("成功")
 // }
 
+function fiftyfifty() {
+    fade();
+    choise();
+
+    setTimeout(function(e){
+        hidden();
+        const array = [$A,$A2,$A3,$A4]
+        const barray = [];
+        for(var i = 0;i<array.length;i++){
+    console.log(DQuestion[Qcnt][5]);
+           
+            if(array[i].innerText===DQuestion[Qcnt][5]||array[i].innerText===AQuestion[Qcnt][5]||array[i].innerText===SQuestion[Qcnt][5]||array[i].innerText===UQuestion[Qcnt][5]||array[i].innerText===YQuestion[Qcnt][5]){
+                console.log(array[i])
+            }else{
+                barray.push(array[i]);
+            }
+
+        } 
+        
+       console.log(barray[0]);
+       console.log(barray[1]);
+       console.log(barray[2]);
+
+       const copy = barray.slice();
+       const selected = [...Array(2)].map(() => copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
+       console.log(selected[0]);
+       console.log(selected[1]);
+
+
+     selected[0].style.visibility = "hidden";
+     selected[1].style.visibility = "hidden";
+        
+
+     $(fif).css("opacity","0.1");
+
+
+    },2000);
+    
+}
+
+
+
 var Qcnt = Math.floor( Math.random() *3);
 
 // var Qcnt = 2
@@ -685,7 +734,7 @@ function omedetougozaimasu(){
             tic.style.display ="block";
 
             setTimeout(function(){
-            
+                kirakira();
                 $(fuk).addClass("animate__animated animate__delay-2s animate__fadeInDown animate__slower");
                 fuk.style.display ="block"; 
 
@@ -698,6 +747,78 @@ function omedetougozaimasu(){
 
 }
 
+
+function zannendesita() {
+
+    que.style.display ="none";
+                    lif.style.display ="none";
+                    zan.style.display ="block";
+
+
+    $(body).css({
+                "background-image": "url(img/gaaan.jpg)",
+                "width": "100vw",
+            "height": "100vh",
+            "background-repeat":"repeat",
+                "background-size":"100% 100%",
+                "transition-duration":"2s"
+            });
+
+
+
+
+
+}
+
+function sippai() {
+                   
+
+
+        hidden();
+        mon.pause();
+
+        const array = [$A,$A2,$A3,$A4]
+        const barray = [];
+        for(var i = 0;i<array.length;i++){
+           
+            if(array[i].innerText===DQuestion[Qcnt][5]||array[i].innerText===AQuestion[Qcnt][5]||array[i].innerText===SQuestion[Qcnt][5]||array[i].innerText===UQuestion[Qcnt][5]||array[i].innerText===YQuestion[Qcnt][5]){
+                console.log(array[i])
+            }else{
+                barray.push(array[i]);
+            }
+
+        } 
+        console.log(barray[0])
+        console.log(barray[1])
+        console.log(barray[2])
+
+        var zero  = barray[0].getAttribute("id");
+        console.log(zero);
+        var zero1 = document.getElementById(zero);
+        $(zero1).addClass("animate__animated  animate__hinge animate__slow" );
+
+        var one  = barray[1].getAttribute("id");
+        console.log(one);
+        var one1 = document.getElementById(one);
+        $(one1).addClass("animate__animated  animate__hinge animate__slow" );
+
+        var two  = barray[2].getAttribute("id");
+        console.log(two);
+        var two1 = document.getElementById(two);
+        $(two1).addClass("animate__animated  animate__hinge animate__slow" );
+
+    //     var one  = document.getElementById(barray[1]);
+    //     var two  = document.getElementById(barray[2]);
+
+
+    //  one.addClass("animate__animated animate__delay-2s animate__fadeInDown animate__slower");
+    //  two.addClass("animate__animated animate__delay-2s animate__fadeInDown animate__slower");
+    //  zero.addClass("animate__animated animate__delay-2s animate__fadeInDown animate__slower");
+
+
+
+    
+}
 
 
 
@@ -1108,12 +1229,12 @@ const clickHandler = (e) =>{
                     //はずれるやつ
 
                 setTimeout(function(){
-                    que.style.display ="none";
-                    lif.style.display ="none";
-                    zan.style.display ="block";
-                    hidden();
-                    mon.pause();
+                    sippai();
+                    setTimeout(function(){
                     
+                    zannendesita();
+                    
+                },5000);
                 },2000);
                     break;
             }
