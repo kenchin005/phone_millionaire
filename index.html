@@ -580,8 +580,8 @@ var AQuestion = [
     ["スマホのPixelはGoogle製、Xpariaはソニー製、iPhoneはApple製。ではGALAXYは何製？","・シャープ","・京セラ","・富士通","・サムスン","・サムスン"],
     ["auのマスコットキャラの三太郎は桃太郎・浦島太郎・あとひとつは何太郎？","金太郎","小太郎","Q太郎","一太郎","金太郎"],
     ["auのCMでかぐや姫を演じている俳優は誰？","菜々緒","浜辺美波","広瀬すず","有村架純","有村架純"],
-    ["スマホで代表的なSNSアプリといえば「LINE」「FaceBook」「Twitter」あとひとつはなに？","imstagram","instagrom","instagram","inspagram","instagram"],
-    ["auの新しく発表した新プランは「データMax for ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"],
+    ["1月15日より放送されている新CM。新しく加わったキャラクターは何？","一寸帽子","花さかじいさん","一休さん","雪女","一休さん"],
+    ["auの新しく発表した新プランは「データMax with ●●●●」？","Netflix","AmazonPrime","Hulu","Tver","AmazonPrime"],
     ["auのワイド学割は何才までOK？","22才","26才","29才","40才","29才"],
     ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","２００３年","２００５年","２００７年","２０１０年","２００７年"],
     ["iphoneシリーズ最新作「iphone12Pro」の画面のサイズはいくつ？","6インチ","6.1インチ","6.2インチ","6.3インチ","6.1インチ"]
@@ -589,6 +589,8 @@ var AQuestion = [
 
 
 ];
+
+
 
 var SQuestion = [
 ["ソフトバンク光のキャラクターはとあるポケモンですが、その名前はなに？","ピチュー","ピカチュウ","ライチュウ","チュウチュウ","ピカチュウ"],
@@ -618,7 +620,7 @@ var UQuestion = [
 var YQuestion = [
     ["YモバイルのAndroidシリーズの代表格といえば何シリーズ？","androidone","androidtwo","androidthree","androidfour","androidone"],
     ["スマホのGALAXYはサムスン製、Xpariaはソニー製、iPhoneはApple製。ではPixelは何製？","・シャープ","・京セラ","・富士通","・Google","・Google"],
-    ["Yモバイルが新しく発表したプランの名前は？","スマホプラン","ベーシックプラン","Yプラン","シンプルプラン","シンプルプラン"],
+    ["Yモバイルが新しく発表したプランの名前は？","ベーシックプラン","スマホプラン","Yプラン","シンプルプラン","シンプルプラン"],
     ["Yモバイル公式マスコットキャラクターの名前はなに？","ふてにゃん","ぶてにゃん","ぐてにゃん","ぷてにゃん","ふてにゃん"],    
     ["現在人気のiPhoneシリーズ。その初代iPhoneが発表されたのは何年？","2003年","2005年","2007年","2010年","2007年"],
     ["Yモバイルのキャラクター。ふてにゃんの猫種は何？","マンチカン","ペルシャ","ラグドール","スコティッシュフォールド","スコティッシュフォールド"],
@@ -676,6 +678,7 @@ function fiftyfifty() {
 
     },2000);
     
+
 }
 
 
@@ -851,6 +854,11 @@ function Dset(){
     $A3.textContent= DQuestion[Qcnt][3];
     $A4.textContent= DQuestion[Qcnt][4];
 
+    $A.style.visibility ="visible";
+    $A2.style.visibility ="visible";
+    $A3.style.visibility ="visible";
+    $A4.style.visibility ="visible";
+
 
     $A.style.display ="none";
     $A2.style.display ="none";
@@ -908,6 +916,11 @@ function Aset(){
     $A3.textContent= AQuestion[Qcnt][3];
     $A4.textContent= AQuestion[Qcnt][4];
 
+    $A.style.visibility ="visible";
+    $A2.style.visibility ="visible";
+    $A3.style.visibility ="visible";
+    $A4.style.visibility ="visible";
+
     $A.style.display ="none";
     $A2.style.display ="none";
     $A3.style.display ="none";
@@ -962,6 +975,11 @@ function Sset(){
     $A3.textContent= SQuestion[Qcnt][3];
     $A4.textContent= SQuestion[Qcnt][4];
 
+    $A.style.visibility ="visible";
+    $A2.style.visibility ="visible";
+    $A3.style.visibility ="visible";
+    $A4.style.visibility ="visible";
+
     $A.style.display ="none";
     $A2.style.display ="none";
     $A3.style.display ="none";
@@ -1015,6 +1033,11 @@ function Uset(){
     $A3.textContent= UQuestion[Qcnt][3];
     $A4.textContent= UQuestion[Qcnt][4];
 
+    $A.style.visibility ="visible";
+    $A2.style.visibility ="visible";
+    $A3.style.visibility ="visible";
+    $A4.style.visibility ="visible";
+
     $A.style.display ="none";
     $A2.style.display ="none";
     $A3.style.display ="none";
@@ -1067,6 +1090,11 @@ function Yset(){
     $A2.textContent= YQuestion[Qcnt][2];
     $A3.textContent= YQuestion[Qcnt][3];
     $A4.textContent= YQuestion[Qcnt][4];
+
+    $A.style.visibility ="visible";
+    $A2.style.visibility ="visible";
+    $A3.style.visibility ="visible";
+    $A4.style.visibility ="visible";
 
     $A.style.display ="none";
     $A2.style.display ="none";
