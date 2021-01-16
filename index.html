@@ -173,6 +173,10 @@
     <audio id="pinpon" preload="auto" src="bgm/pinpon.mp3" type="audio/mp3"></audio>
     <audio id="dondon" preload="auto" src="bgm/don.mp3" type="audio/mp3"></audio>
     <audio id="kirakira" preload="auto" src="bgm/kirakira.mp3" type="audio/mp3"></audio>
+    <audio id="eriAudiense" preload="auto" src="voice/eriAudiense.mp3" type="audio/mp3"></audio>
+    <audio id="eriFiftyfifty" preload="auto" src="voice/eriFiftyfifty.mp3" type="audio/mp3"></audio>
+    <audio id="eriTelephone" preload="auto" src="voice/eriTelephone.mp3" type="audio/mp3"></audio>
+
 </div>
 
 <!-- 黒フェード -->
@@ -233,14 +237,22 @@ const cho = document.querySelector("#choise");
 const pi = document.querySelector("#pinpon");
 const don = document.querySelector("#dondon");
 const kir = document.querySelector("#kirakira");
+const eriA = document.querySelector("#eriAudiense");
+const eriF = document.querySelector("#eriFiftyfifty");
+const eriT = document.querySelector("#eriTelephone");
 
 
 function monmon(){
     mon.loop = true;
     mon.play();
+    mon.volume = 0.1;
 }
 function seikai() {
     sei.play();
+}
+function bgmmmm() {
+    bgm.play();
+    bgm.volume = 0.1;
 }
 function bgmPause() {
     bgm.pause();
@@ -254,11 +266,11 @@ function beem() {
 }
 function choise() {
     cho.play();
-    cho.volume = 1;
+    cho.volume = 0.5;
 }
 function pinpon() {
     pi.play();
-    cho.volume = 1;
+   
 }
 function dondon() {
     don.play();
@@ -268,6 +280,19 @@ function kirakira() {
     kir.play();
     kir.volume = 1;
 }
+function eriAudiense() {
+    eriA.play();
+    eriA.volume = 1;
+}
+function eriFiftyfifty() {
+    eriF.play();
+    eriF.volume = 1;
+}
+function eriTelephone() {
+    eriT.play();
+    eriT.volume = 1;
+}
+
 
 
 
@@ -279,7 +304,7 @@ var body = document.body;
 var tou = document.getElementById("tou");
 
 tou.addEventListener("click",()=>{
-    bgm.play();
+    bgmmmm();
 
 //     $(body).animate({
 //     opacity: 0
@@ -378,6 +403,10 @@ function teltel() {
     choise();
 
     setTimeout(function(){
+        eriTelephone();
+    },1000);
+
+    setTimeout(function(){
         hidden();
 
 
@@ -391,11 +420,16 @@ function audaud() {
     choise();
 
     setTimeout(function(){
+        eriAudiense();
+    },1000);
+
+     setTimeout(function(){
         hidden();
 
         $(aud).css("opacity","0.1");
 
     },2000);
+
     
 }
 
@@ -644,6 +678,10 @@ function fiftyfifty() {
     fade();
     choise();
 
+    setTimeout(function(){
+        
+        eriFiftyfifty();
+    },1000);
     setTimeout(function(e){
         hidden();
         const array = [$A,$A2,$A3,$A4]
@@ -657,7 +695,7 @@ function fiftyfifty() {
                 barray.push(array[i]);
             }
 
-        } 
+        }
         
        console.log(barray[0]);
        console.log(barray[1]);
@@ -677,7 +715,7 @@ function fiftyfifty() {
 
 
     },2000);
-    
+
 
 }
 
@@ -879,10 +917,10 @@ setTimeout(function(){
             $A4.style.display ="block";
 
 
-},5000);
-},5000);
-},5000);
-},5000);
+},3500);
+},3500);
+},3500);
+},3500);
 
 
     que.style.display = "block"; 
@@ -940,10 +978,10 @@ setTimeout(function(){
             $A4.style.display ="block";
 
 
-        },5000);
-},5000);
-},5000);
-},5000);
+        },3500);
+},3500);
+},3500);
+},3500);
 
     que.style.display = "block"; 
     lif.style.display ="block";
@@ -999,10 +1037,10 @@ setTimeout(function(){
             $A4.style.display ="block";
 
 
-        },5000);
-},5000);
-},5000);
-},5000);
+        },3500);
+},3500);
+},3500);
+},3500);
 
     que.style.display = "block"; 
     lif.style.display ="block";
@@ -1057,10 +1095,10 @@ setTimeout(function(){
             $A4.style.display ="block";
 
 
-        },5000);
-},5000);
-},5000);
-},5000);
+        },3500);
+},3500);
+},3500);
+},3500);
 
     que.style.display = "block"; 
     lif.style.display ="block";
@@ -1115,10 +1153,10 @@ setTimeout(function(){
             $A4.style.display ="block";
 
 
-        },5000);
-},5000);
-},5000);
-},5000);
+        },3500);
+},3500);
+},3500);
+},3500);
 
 
 
