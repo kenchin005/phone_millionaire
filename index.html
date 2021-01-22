@@ -459,6 +459,151 @@ function audaud() {
 //-----------------
 
 
+//----リファクタリング中０１２３//\\\\\\\\\\\
+
+function choiseQuestion(){
+    kettei();
+    $('#tit').fadeOut(1000)
+    setTimeout(function(){
+
+        
+            beem();
+
+            $('#jin').fadeIn(3000)
+
+        setTimeout(function(){
+    
+            // えりのぼいす？
+            $('#jin').fadeOut(1000)
+            // jin.style.display = "block"
+            // tit.style.display ="none";
+            
+        
+            setQuestion();
+
+        },4000);
+
+    },2000);
+}
+
+
+const swichQuestion = (e)=> {
+    switch (e.target.div) {
+    case docomo:
+    
+    choiseQuestion();
+    $Q.textContent = DQuestion[Qcnt][0];
+    $A.textContent= DQuestion[Qcnt][1];
+    $A2.textContent= DQuestion[Qcnt][2];
+    $A3.textContent= DQuestion[Qcnt][3];
+    $A4.textContent= DQuestion[Qcnt][4];
+
+        break;
+
+    case au:
+        
+        break;
+
+    case softbank:
+        
+        break;
+
+    case uq:
+        
+        break;
+
+    case ym:
+        
+        break;
+
+    default:
+        break;
+}
+
+
+
+
+}
+
+
+function setQuestion(){
+
+if(correct >= 5){
+    // setTimeout(function(){
+        omedetougozaimasu();
+
+    // },4010);
+    return;
+
+    }else{
+
+       
+
+    }
+
+
+bgmPause();
+monmon();
+
+console.log(Qcnt);
+
+
+
+
+
+$Q.textContent = DQuestion[Qcnt][0];
+$A.textContent= DQuestion[Qcnt][1];
+$A2.textContent= DQuestion[Qcnt][2];
+$A3.textContent= DQuestion[Qcnt][3];
+$A4.textContent= DQuestion[Qcnt][4];
+
+$A.style.visibility ="visible";
+$A2.style.visibility ="visible";
+$A3.style.visibility ="visible";
+$A4.style.visibility ="visible";
+
+
+$A.style.display ="none";
+$A2.style.display ="none";
+$A3.style.display ="none";
+$A4.style.display ="none";
+
+setTimeout(function(){
+dondon();
+$A.style.display ="block";
+setTimeout(function(){
+    dondon();
+    $A2.style.display ="block";
+    setTimeout(function(){
+        dondon();
+    $A3.style.display ="block";
+        setTimeout(function(){
+            dondon();
+        $A4.style.display ="block";
+
+
+},3500);
+},3500);
+},3500);
+},4000);
+
+
+que.style.display = "block"; 
+lif.style.display ="block";
+tit.style.display ="none";
+
+
+}
+
+
+
+//-----------------------------------------
+
+
+
+
+
+
 
 function DDset(){
     kettei();
