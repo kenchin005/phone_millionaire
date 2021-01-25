@@ -41,7 +41,8 @@ h2{
     }
   }
 
-div#jin {
+  div#jin {
     text-align: center;
-    margin: 80px auto;
+    margin: 0px auto;
+    margin-top: 250px;
 }

@@ -105,7 +105,7 @@ p{
 .anser2{
     /* background-color: white; */
     /* margin: 20px; */
-    width: 239px;
+    width: 240px;
     height: 80px;
     padding-top: 20px;
 }
@@ -121,7 +121,7 @@ p{
 .anser4{
     /* background-color: white; */
     /* margin: 20px; */
-    width: 239px;
+    width: 240px;
     height: 80px;
     padding-top: 20px;
 }
@@ -175,13 +175,13 @@ p{
     /* text-align: center; */
     /* left: 300px; */
     /* right: 200px; */
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 900px;
     left: 0;
     right: 0;
     margin: auto;
     bottom: 0;
-    top: 0;
+    top: 70px;
 }
 
 
@@ -232,13 +232,16 @@ p{
 .help {
     display: flex;
     justify-content: space-around;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .help p {
     border: 1px aqua solid;
-    border-radius: 200px;
-    width: 120px;
+    border-radius: 191px;
+    width: 200px;
     color: white;
+    height: 200px;
     text-align: center;
     /* padding-top: 0px; */
     /* font-size: 17px; */
@@ -250,10 +253,11 @@ p{
 }
 
 .fifty {
-    font-size: 30px;
-    padding-top: 27px;
+    font-size: 60px;
+    padding-top: 45px;
     font-weight: bold;
     cursor: pointer;
+    text-size-adjust: 46px;
 }
 
 
@@ -263,8 +267,18 @@ p{
 
 #telefon{
     cursor: pointer;
+    margin-top: 55px;
 }
 
 #audiense{
     cursor: pointer;
+    margin-top: 55px;
+}
+
+.dainan{
+
+}
+
+.dainan p{
+
 }

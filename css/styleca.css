@@ -108,7 +108,8 @@
 .titleDisplay {
     width: 800px;
     height: 548px;
-    margin: 100px auto;
+    margin: 0px auto;
+    margin-top: 250px;
 }
 
 .titleText {
