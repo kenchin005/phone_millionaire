@@ -451,11 +451,7 @@ tit.style.display ="none";
 
 
 
-setTimeout(function(){
 
-
-
-},1000);
 
 
 
